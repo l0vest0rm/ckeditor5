@@ -899,6 +899,10 @@ function prepareToAttributeConverter( config, shallow ) {
 		// Since we are converting to attribute we need a range on which we will set the attribute.
 		// If the range is not created yet, let's create it by converting children of the current node first.
 		if ( !data.modelRange ) {
+			if ( shallow ) {
+				return;
+			}
+
 			// Convert children and set conversion result as a current data.
 			Object.assign( data, conversionApi.convertChildren( data.viewItem, data.modelCursor ) );
 		}
