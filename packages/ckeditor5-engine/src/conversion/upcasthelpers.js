@@ -867,6 +867,13 @@ function prepareToAttributeConverter( config, shallow ) {
 	const matcher = new Matcher( config.view );
 
 	return ( evt, data, conversionApi ) => {
+		// Converting an attribute of an element that has not been converted to anything does not make sense
+		// because there will be nowhere to set that attribute on. At this stage, the element should've already
+		// been converted (https://github.com/ckeditor/ckeditor5/issues/11000).
+		if ( !data.modelRange && shallow ) {
+			return;
+		}
+
 		const match = matcher.match( data.viewItem );
 
 		// If there is no match, this callback should not do anything.
@@ -899,10 +906,6 @@ function prepareToAttributeConverter( config, shallow ) {
 		// Since we are converting to attribute we need a range on which we will set the attribute.
 		// If the range is not created yet, let's create it by converting children of the current node first.
 		if ( !data.modelRange ) {
-			if ( shallow ) {
-				return;
-			}
-
 			// Convert children and set conversion result as a current data.
 			Object.assign( data, conversionApi.convertChildren( data.viewItem, data.modelCursor ) );
 		}
