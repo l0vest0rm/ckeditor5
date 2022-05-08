@@ -59,6 +59,8 @@ import SpecialCharactersText from '@ckeditor/ckeditor5-special-characters/src/sp
 import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-characters/src/specialcharactersmathematical';
 import Style from '@ckeditor/ckeditor5-style/src/style';
 import Typing from '@ckeditor/ckeditor5-typing/src/typing';
+import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
 
 import Dot from './plugin/dot';
 import Wavy from './plugin/wavy';
@@ -120,7 +122,9 @@ ClassicEditor.builtinPlugins = [
   RemoveFormat,
   GeneralHtmlSupport,
   Style,
-  Typing
+  Typing,
+  SimpleUploadAdapter,
+  Base64UploadAdapter
 ];
 
 // Editor configuration.
