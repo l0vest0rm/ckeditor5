@@ -26,6 +26,7 @@ import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
+import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties';
@@ -64,6 +65,7 @@ import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64u
 
 import Dot from './plugin/dot';
 import Wavy from './plugin/wavy';
+import Question from './plugin/question';
 
 export default class ClassicEditor extends ClassicEditorBase { }
 
@@ -85,6 +87,7 @@ ClassicEditor.builtinPlugins = [
   ImageToolbar,
   ImageUpload,
   Indent,
+  IndentBlock,
   Link,
   List,
   TodoList,
@@ -123,8 +126,7 @@ ClassicEditor.builtinPlugins = [
   GeneralHtmlSupport,
   Style,
   Typing,
-  SimpleUploadAdapter,
-  Base64UploadAdapter
+  Question
 ];
 
 // Editor configuration.
