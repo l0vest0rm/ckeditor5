@@ -48,6 +48,15 @@ export default class QuestionEditing extends Plugin {
     });
 
     //editor.conversion.elementToElement({ model: 'question', view: 'question' });
+    editor.conversion
+      .elementToElement({
+        model: 'question',
+        view: (modelElement, conversionApi) => {
+          const { writer } = conversionApi;
+          //console.log('modelElement.getAttribute()', modelElement.getAttribute('id'))
+          return writer.createContainerElement('question', { id: modelElement.getAttribute('id') ? modelElement.getAttribute('id') : Date.now() });;
+        }
+      });
 
     // Postfixer which cleans incorrect model states connected with block quotes.
     editor.model.document.registerPostFixer(writer => {

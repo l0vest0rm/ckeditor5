@@ -161,7 +161,7 @@ export default class QuestionCommand extends Command {
       let quote = findQuote(groupRange.start);
 
       if (!quote) {
-        quote = writer.createElement('question');
+        quote = writer.createElement('question', { id: Date.now() });
 
         writer.wrap(groupRange, quote);
       }
