@@ -65,7 +65,7 @@ import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64u
 
 import Dot from './plugin/dot';
 import Wavy from './plugin/wavy';
-//import Question from './plugin/question';
+import Question from './plugin/block';
 
 export default class ClassicEditor extends ClassicEditorBase { }
 
@@ -125,7 +125,8 @@ ClassicEditor.builtinPlugins = [
   RemoveFormat,
   GeneralHtmlSupport,
   Style,
-  Typing
+  Typing,
+  Question
 ];
 
 // Editor configuration.
