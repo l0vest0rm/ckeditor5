@@ -49,12 +49,20 @@ export default class QuestionEditing extends Plugin {
 
     //editor.conversion.elementToElement({ model: 'question', view: 'question' });
     editor.conversion
+      .for('downcast')
       .elementToElement({
         model: 'question',
-        view: (modelElement, conversionApi) => {
-          const { writer } = conversionApi;
+        view: (modelElement, { writer }) => {
           //console.log('modelElement.getAttribute()', modelElement.getAttribute('id'))
-          return writer.createContainerElement('question', { id: modelElement.getAttribute('id') ? modelElement.getAttribute('id') : Date.now() });;
+          return writer.createContainerElement('question', { id: modelElement.getAttribute('id') ? modelElement.getAttribute('id') : Date.now() });
+        }
+      });
+    editor.conversion
+      .for('upcast')
+      .elementToElement({
+        view: 'question',
+        model: (viewElement, { writer }) => {
+          return writer.createElement('question', { id: modelElement.getAttribute('id') ? modelElement.getAttribute('id') : Date.now() });
         }
       });
 
