@@ -60,6 +60,7 @@ import SpecialCharactersEssentials from '@ckeditor/ckeditor5-special-characters/
 import SpecialCharactersLatin from '@ckeditor/ckeditor5-special-characters/src/specialcharacterslatin';
 import SpecialCharactersText from '@ckeditor/ckeditor5-special-characters/src/specialcharacterstext';
 import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-characters/src/specialcharactersmathematical';
+import SelectAll from '@ckeditor/ckeditor5-select-all/src/selectall';
 import Style from '@ckeditor/ckeditor5-style/src/style';
 import Typing from '@ckeditor/ckeditor5-typing/src/typing';
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
@@ -128,6 +129,7 @@ ClassicEditor.builtinPlugins = [
   SpecialCharactersMathematical,
   RemoveFormat,
   GeneralHtmlSupport,
+  SelectAll,
   Style,
   Typing,
   Question
