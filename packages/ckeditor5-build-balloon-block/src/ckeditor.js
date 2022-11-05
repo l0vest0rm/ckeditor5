@@ -136,6 +136,7 @@ BalloonEditor.builtinPlugins = [
   SelectAll,
   Style,
   Typing,
+  Base64UploadAdapter,
   Question
 ];
 
